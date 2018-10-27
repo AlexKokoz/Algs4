@@ -68,19 +68,6 @@ class Graph:
         self.E += 1
         self.adj[v].append(w)
         self.adj[w].append(v)
-
-
-    """
-    Returns the vertices adjacent to vertex v.
-    
-    :param  v: the vertex
-    :returns: the vertices adjacent to vertex v, as a list
-    :raises TypeError: unless 0 <= v < V
-    
-    def adj(self, v: int):
-        self.validateVertex(v)
-        return self.adj[v]
-    """
     
     """
     Returns the degree of vertex v.
