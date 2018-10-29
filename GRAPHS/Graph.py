@@ -20,14 +20,13 @@ class Graph:
 
     """
     Initializes an empty graph with V vertices and 0 edges.
-    param V the number of vertices
-    
+
     :param  V: number of vertices
-    :raises TypeError: if V < 0
+    :raises ValueError: if V < 0
     """
     def __init__(self, V: int):
         if V < 0:
-            raise TypeError("number of vertices must be nonnegative")
+            raise ValueError("number of vertices must be nonnegative")
         self.V = V
         self.E = 0
         self.adj = []
@@ -35,11 +34,14 @@ class Graph:
             self.adj.append([])
 
     """
-    Initializes a new graph that is a deep copy of G.
-    
-    :param  G: the graph to copy 
+    Initializes a new graph that is a deep copy of G.    
+
+    :param  G: the graph to copy \
+    :raises TypeError: if G is not a Graph instance
     """   
-    def copy(self, G: Graph):
+    def copy(self, G):
+        if not isinstance(G, Graph):
+            raise TypeError("G is not a Graph instance")
         self.V = G.V
         self.E = G.E
         self.adj = []
@@ -50,17 +52,17 @@ class Graph:
                 self.adj[v].append(w)
     
     
-    # raise a TypeError unless 0 <= v < V
+    # raise a IndexError unless 0 <= v < V
     def validateVertex(self, v: int):
         if v < 0 or v >= self.V:
-            raise TypeError("vertex ", v, " is not between 0 and ", (self.V-1))
+            raise IndexError("vertex ", v, " is not between 0 and ", (self.V-1))
 
     """
     Adds the undirected edge v-w to this graph.
     
     :param  v: one vertex in the edge
     :param  w: the other vertex in the edge
-    :raises TypeError: unless both 0 <= v < V and 0 <= w < V
+    :raises IndexError: unless both 0 <= v < V and 0 <= w < V
     """
     def addEdge(self, v: int, w:int):
         self.validateVertex(v)
@@ -74,7 +76,7 @@ class Graph:
     
     :param  v: the vertex
     :returns: the degree of vertex v
-    :raises TypeError: unless 0 <= v < V
+    :raises IndexError: unless 0 <= v < V
     """
     def degree(self, v: int):
         self.validateVertex(v)
