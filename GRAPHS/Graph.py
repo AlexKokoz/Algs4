@@ -27,11 +27,9 @@ class Graph:
     def __init__(self, V: int):
         if V < 0:
             raise ValueError("number of vertices must be nonnegative")
-        self.V = V
-        self.E = 0
-        self.adj = []
-        for _ in range(V):
-            self.adj.append([])
+        self.V = V # number of vertices in this digraph
+        self.E = 0 # number of edges in this digraph
+        self.adj = [[] for _ in range(V)] # adj[v] = adjacency list for vertex v
 
     """
     Initializes a new graph that is a deep copy of G.    
