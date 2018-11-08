@@ -1,6 +1,7 @@
 
 """
 The MaxPQ class represents a priority queue of keys.
+This class does not permit None elements. 
 It supports the usual insert and delete-the-maximum
 operations, along with methods for peeking at the maximum key,
 testing if the priority queue is empty, and getting all the keys
