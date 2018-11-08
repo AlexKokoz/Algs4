@@ -64,15 +64,6 @@ class MinPQ(object):
         if self.isEmpty():
             raise AssertionError("Priority queue underflow")
         return self.pq[1]
-    
-
-    # helper function to double the size of the heap array
-    def _resize(self, capacity: int):
-        assert capacity > self.n
-        toAdd = capacity - self.n
-        for _ in range(toAdd):
-            self.pq.append(None)
-    
 
     """
     Adds a new key to this priority queue.
