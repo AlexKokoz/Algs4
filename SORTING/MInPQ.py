@@ -21,6 +21,9 @@ class MinPQ(object):
     Takes time proportional to the number of keys, using sink-based heap construction.
     
     :param  keys: the list of keys
+    :raises TypeError: if the key is None
+    :raises AssertionError: if new key's type differs from the
+    priority queue's elements' type
     :raises AssertionError: if the priority queue after this 
     operation is not a min heap
     """
@@ -74,6 +77,7 @@ class MinPQ(object):
     Adds a new key to this priority queue.
     
     :param  x: the key to add to this priority queue
+    :raises TypeError: if the key is None
     :raises AssertionError: if new key's type differs from the
     priority queue's elements' type
     :raises AssertionError: if the priority queue after this 
@@ -90,6 +94,8 @@ class MinPQ(object):
         assert self._isMinHeap(), "Priority Queue is not a Min Heap"
     
     def _hasValidType(self, x):
+        if x is None:
+            raise TypeError("key is None")
         if self.n > 0:
             pqType = type(self.pq[1]).__name__
             xType = type(x).__name__
