@@ -21,6 +21,8 @@ class MinPQ:
     Takes time proportional to the number of keys, using sink-based heap construction.
     
     :param  keys: the list of keys
+    :raises AssertionError: if the priority queue after this 
+    operation is not a min heap
     """
     def __init__(self, keys: list):
         self.n = 0
