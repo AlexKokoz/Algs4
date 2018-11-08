@@ -12,7 +12,7 @@ iterating over the vertices adjacent from a given vertex, which takes
 time proportional to the number of such vertices.
 """
 
-class Digraph:
+class Digraph(object):
 
     """
     Initializes an empty digraph with V vertices.

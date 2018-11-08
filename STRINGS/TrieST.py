@@ -31,7 +31,7 @@ to the length of the key (in the worst case). Construction takes constant time.
 The size, and is-empty operations take constant time.
 Construction takes constant time.
 """
-class TrieST:
+class TrieST(object):
 
     # trie node
     class Node:

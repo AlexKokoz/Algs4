@@ -14,7 +14,7 @@ Construction takes time proportional to the specified number of
 items used to initialize the data structure.
 """
 
-class MinPQ:
+class MinPQ(object):
 
     """
     Initializes a priority queue from the list of keys.

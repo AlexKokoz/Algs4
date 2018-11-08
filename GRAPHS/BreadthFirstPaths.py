@@ -37,7 +37,7 @@ each call to #pathTo(int) takes time proportional to the length
 of the path.
 It uses extra space (not including the graph) proportional to V.
 """
-class BreadthFirstPaths:
+class BreadthFirstPaths(object):
     # private static final int INFINITY = Integer.MAX_VALUE;
     # private boolean[] marked;  // marked[v] = is there an s-v path
     # private int[] edgeTo;      // edgeTo[v] = previous edge on shortest s-v path

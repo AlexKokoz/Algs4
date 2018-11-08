@@ -34,7 +34,7 @@ each call to #pathTo(int) takes time proportional to the length
 of the path.
 It uses extra space (not including the graph) proportional to V.
 """
-class DepthFirstPaths:
+class DepthFirstPaths(object):
 
     """
     Computes a path between s and every other vertex in graph G.

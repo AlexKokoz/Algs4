@@ -8,7 +8,7 @@ in the worst case, where n is the length of the text string,
 m is the length of the pattern, and R is the alphabet size.
 It uses extra space proportional to mR.
 """
-class KMP:
+class KMP(object):
 
     """
     Preprocesses the pattern string.

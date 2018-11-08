@@ -16,7 +16,7 @@ All operations take constant time (in the worst case) except
 iterating over the vertices adjacent to a given vertex, which takes
 time proportional to the number of such vertices.
 """
-class Graph:
+class Graph(object):
 
     """
     Initializes an empty graph with V vertices and 0 edges.
